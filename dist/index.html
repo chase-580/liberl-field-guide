@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#14372f" />
+    <meta name="description" content="A spoiler-conscious, bilingual companion for Trails in the Sky FC quests, BP, and missables." />
+    <title>Liberl Field Guide | Trails in the Sky FC</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip">Skip to guide</a>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Liberl Field Guide home">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <span>
+          <strong>Liberl Field Guide</strong>
+          <small data-i18n="brandSub">Trails in the Sky FC</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#home" data-route="home" data-i18n="navDesk">Field desk</a>
+        <a href="#walkthrough" data-route="walkthrough" data-i18n="navWalkthrough">Walkthrough</a>
+        <a href="#quests" data-route="quests" data-i18n="navRequests">Requests</a>
+        <a href="#collectibles" data-route="collectibles" data-i18n="navCollectibles">Collectibles</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="locale-switch" id="localeSwitch" type="button" aria-label="Switch language">
+          <span class="locale-option is-active" data-locale-option="en">EN</span>
+          <span class="locale-divider">/</span>
+          <span class="locale-option" data-locale-option="zh">中文</span>
+        </button>
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="view" id="homeView" data-view="home">
+        <div class="dashboard-shell">
+          <div class="chapter-heading reveal">
+            <div>
+              <p class="kicker" data-i18n="fieldRecord">BRACER FIELD RECORD 01</p>
+              <h1 data-i18n="chapterTitle">Prologue: A Father's Departure</h1>
+              <p class="chapter-meta">
+                <span data-i18n="rolentRegion">Rolent Region</span>
+                <span aria-hidden="true">•</span>
+                <span data-i18n="editionLabel">Original FC edition</span>
+              </p>
+            </div>
+            <div class="chapter-selector-wrap">
+              <label for="chapterSelect" data-i18n="chapterLabel">Chapter</label>
+              <select id="chapterSelect">
+                <option value="prologue" data-i18n="prologueOption">Prologue · Rolent</option>
+                <option value="chapter1" disabled data-i18n="chapter1Option">Chapter 1 · Bose (coming soon)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="progress-panel reveal">
+              <div class="progress-copy">
+                <p class="section-label" data-i18n="journeyProgress">Journey progress</p>
+                <div class="progress-number"><span id="progressPercent">0</span><small>%</small></div>
+                <p id="progressSummary">0 of 18 field notes complete</p>
+                <a class="primary-button" href="#walkthrough">
+                  <span data-i18n="continueJourney">Continue journey</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div class="progress-dial" id="progressDial" aria-label="Completion progress">
+                <div class="dial-inner">
+                  <span id="dialCompleted">0</span>
+                  <small data-i18n="checked">checked</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="bp-panel reveal">
+              <div class="bp-heading">
+                <div>
+                  <p class="section-label" data-i18n="bracerPoints">Bracer points</p>
+                  <div class="bp-value"><span id="earnedBp">0</span><span>/ 53 BP</span></div>
+                </div>
+                <span class="rank-badge" data-i18n="juniorBracer">Junior Bracer</span>
+              </div>
+              <div class="bp-track"><span id="bpTrack"></span></div>
+              <div class="bp-caption">
+                <span data-i18n="prologueMaximum">Prologue maximum</span>
+                <strong id="remainingBp">53 BP remaining</strong>
+              </div>
+              <p class="bp-note" data-i18n="bpNote">Bonus BP depends on a few choices. Open each request before advancing the story.</p>
+            </article>
+          </div>
+
+          <section class="focus-section reveal" aria-labelledby="focusHeading">
+            <div class="section-heading-row">
+              <div>
+                <p class="section-label" data-i18n="beforeYouMove">Before you move on</p>
+                <h2 id="focusHeading" data-i18n="dontLeaveRolent">Don't leave Rolent yet</h2>
+              </div>
+              <a href="#collectibles" class="text-link"><span data-i18n="viewChecklist">View full checklist</span><span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="alert-list" id="alertList"></div>
+          </section>
+
+          <section class="quick-search reveal" aria-labelledby="searchHeading">
+            <div>
+              <p class="section-label" data-i18n="quickLookup">Quick lookup</p>
+              <h2 id="searchHeading" data-i18n="findAnything">Find a request, item, or place</h2>
+            </div>
+            <form id="searchForm" role="search">
+              <label class="sr-only" for="siteSearch" data-i18n="searchLabel">Search the field guide</label>
+              <span class="search-symbol" aria-hidden="true">⌕</span>
+              <input id="siteSearch" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Try “Carnelia”, “BP”, or “Rolent”" />
+              <kbd>/</kbd>
+            </form>
+            <div class="search-results" id="searchResults" hidden></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" id="walkthroughView" data-view="walkthrough" hidden>
+        <div class="content-shell two-column-layout">
+          <aside class="chapter-rail">
+            <p class="section-label" data-i18n="chapterContents">Chapter contents</p>
+            <nav id="stepNav" aria-label="Walkthrough steps"></nav>
+            <div class="rail-progress">
+              <span data-i18n="yourProgress">Your progress</span>
+              <strong id="railProgress">0 / 8</strong>
+            </div>
+          </aside>
+
+          <article class="guide-article">
+            <header class="article-header">
+              <p class="kicker" data-i18n="spoilerLight">SPOILER-LIGHT WALKTHROUGH</p>
+              <h1 data-i18n="walkthroughTitle">Prologue field route</h1>
+              <p data-i18n="walkthroughIntro">A safe order for every main objective, request, and one-time pickup in Rolent.</p>
+            </header>
+            <div class="timeline" id="walkthroughTimeline"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="questsView" data-view="quests" hidden>
+        <div class="content-shell">
+          <header class="page-header">
+            <div>
+              <p class="kicker" data-i18n="bracerBoard">ROLENT BRACER BOARD</p>
+              <h1 data-i18n="requestsTitle">Requests</h1>
+              <p data-i18n="requestsIntro">Track deadlines, bonus conditions, and report status before the story moves on.</p>
+            </div>
+            <div class="completion-stamp">
+              <strong id="questCount">0 / 9</strong>
+              <span data-i18n="reported">reported</span>
+            </div>
+          </header>
+
+          <div class="filter-bar" role="group" aria-label="Request filters">
+            <button class="filter-chip is-active" data-filter="all" data-i18n="filterAll">All</button>
+            <button class="filter-chip" data-filter="main" data-i18n="filterMain">Main</button>
+            <button class="filter-chip" data-filter="side" data-i18n="filterSide">Side</button>
+            <button class="filter-chip" data-filter="missable" data-i18n="filterMissable">Missable</button>
+            <button class="filter-chip" data-filter="incomplete" data-i18n="filterIncomplete">Incomplete</button>
+          </div>
+
+          <div class="request-list" id="requestList"></div>
+        </div>
+      </section>
+
+      <section class="view" id="collectiblesView" data-view="collectibles" hidden>
+        <div class="content-shell">
+          <header class="page-header">
+            <div>
+              <p class="kicker" data-i18n="archiveRecord">ROLENT ARCHIVE RECORD</p>
+              <h1 data-i18n="collectiblesTitle">Missables & collectibles</h1>
+              <p data-i18n="collectiblesIntro">A compact, spoiler-conscious list for the prologue's one-time pickups.</p>
+            </div>
+            <div class="completion-stamp">
+              <strong id="collectibleCount">0 / 6</strong>
+              <span data-i18n="secured">secured</span>
+            </div>
+          </header>
+
+          <div class="collection-grid" id="collectionGrid"></div>
+
+          <aside class="edition-note">
+            <span class="note-mark" aria-hidden="true">i</span>
+            <div>
+              <strong data-i18n="editionNoteTitle">Edition note</strong>
+              <p data-i18n="editionNoteText">This MVP tracks the original Trails in the Sky FC release. The 2025 remake has different quest and exploration details.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#home" data-route="home"><span aria-hidden="true">⌂</span><span data-i18n="navDesk">Field desk</span></a>
+      <a href="#walkthrough" data-route="walkthrough"><span aria-hidden="true">≡</span><span data-i18n="navWalkthrough">Walkthrough</span></a>
+      <a href="#quests" data-route="quests"><span aria-hidden="true">◇</span><span data-i18n="navRequests">Requests</span></a>
+      <a href="#collectibles" data-route="collectibles"><span aria-hidden="true">▣</span><span data-i18n="navCollectibles">Collectibles</span></a>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
