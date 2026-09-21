@@ -2,6 +2,8 @@
 
 A static bilingual MVP guide for the original release of *The Legend of Heroes: Trails in the Sky FC*.
 
+[Open the public site](https://chase-580.github.io/liberl-field-guide/)
+
 ## Included
 
 - English-first interface with complete Chinese switching
@@ -18,3 +20,7 @@ python -m http.server 4173 --directory dist
 ```
 
 Open `http://127.0.0.1:4173`.
+
+## Deployment
+
+Pushes to `main` deploy the contents of `dist` to GitHub Pages through GitHub Actions.

@@ -65,7 +65,9 @@
       route: "Route",
       bonus: "Bonus condition",
       completeStep: "Mark this field step complete",
-      collected: "Mark as secured"
+      collected: "Mark as secured",
+      fanNotice: "Unofficial fan-made guide. The Legend of Heroes and Trails in the Sky are trademarks of Nihon Falcom.",
+      sourceCode: "Source on GitHub"
     },
     zh: {
       skip: "跳转到攻略内容",
@@ -128,7 +130,9 @@
       route: "行动路线",
       bonus: "额外条件",
       completeStep: "标记此步骤为已完成",
-      collected: "标记为已取得"
+      collected: "标记为已取得",
+      fanNotice: "非官方粉丝攻略站。《英雄传说》及《空之轨迹》为日本 Falcom 的商标。",
+      sourceCode: "在 GitHub 查看源码"
     }
   };
 

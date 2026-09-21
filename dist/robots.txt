@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chase-580.github.io/liberl-field-guide/sitemap.xml
