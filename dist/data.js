@@ -134,10 +134,10 @@ window.GUIDE_DATA = (() => {
   const chests = {
     prologue: [
       ["Rolent Sewers",2,"Reviving Balm; Small Box ×2 (story chest, included in the guide's 164 counter)"],
-      ["Malga Trail / Esmelas approach",2,"Reviving Balm; Tear Balm"],
+      ["Malga Trail rescue route",2,"Reviving Balm; Tear Balm"],
       ["Milch Main Road",4,"Tear Balm ×3; Topaz Talisman (monster chest)"],
       ["Malga Mine / Mistwald",3,"White Bracelet; Tear Balm; Hide Jumpsuit"],
-      ["Esmelas Tower / late Rolent routes",5,"Tear Balm; recipe chest; Impede 2; Viper route rewards"],
+      ["Elize Highway / Esmelas Tower",5,"Tear Balm ×2; Knitted Shoes; Tin Staff; Potluck in a Shell"],
     ],
     chapter1: [
       ["Bose highways and Nebel Valley",8,"Reviving Balm; Tear Balm ×3; Deathblow 2; Beast Steak; Strega-R; Katars"],
