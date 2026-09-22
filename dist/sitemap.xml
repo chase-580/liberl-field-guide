@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://chase-580.github.io/liberl-field-guide/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/walkthrough/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/quests/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/treasures/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/missables/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/bosses/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/builds/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chase-580.github.io/liberl-field-guide/original-fc/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
