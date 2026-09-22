@@ -155,6 +155,68 @@ button, select { cursor: pointer; }
 .desktop-nav a:hover, .desktop-nav a.is-active { color: var(--ink); }
 .desktop-nav a.is-active::after { transform: scaleX(1); }
 
+/* Complete guide additions */
+.completion-map { margin-top: 54px; padding-top: 30px; border-top: 1px solid var(--line-strong); }
+.chapter-map { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 22px; }
+.map-stop { min-height: 118px; padding: 16px; text-align: left; color: var(--ink); background: var(--surface); border: 1px solid var(--line); }
+.map-stop:hover, .map-stop.is-current { border-color: var(--gold); box-shadow: inset 0 -3px 0 var(--gold); }
+.map-stop > span { display: block; color: var(--gold); font-family: var(--mono); font-size: .72rem; }
+.map-stop strong { display: block; margin: 12px 0 3px; font-family: var(--serif); font-size: 1.25rem; }
+.map-stop small { color: var(--ink-soft); }
+.ledger-section { margin-top: 44px; }
+.ledger-heading { display: flex; justify-content: space-between; align-items: end; padding-bottom: 16px; border-bottom: 1px solid var(--line-strong); }
+.ledger-heading strong { color: var(--gold); font-family: var(--mono); font-size: 1rem; }
+.ledger-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.ledger-card { display: grid; grid-template-columns: 54px 1fr; gap: 18px; min-height: 150px; padding: 22px; background: var(--surface); border: 1px solid var(--line); }
+.ledger-card p { color: var(--ink-soft); font-size: .9rem; }
+.ledger-count { display: grid; place-items: center; align-self: start; width: 50px; height: 50px; background: var(--forest); color: var(--surface); font: 650 1.2rem var(--serif); }
+[data-theme="dark"] .ledger-count { color: #17231e; }
+.book-card { border-top: 3px solid var(--gold); }
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+.recipe-grid .check-row { margin: 0; padding: 14px; background: var(--surface); border: 1px solid var(--line); }
+.check-row.compact { margin-top: 12px; }
+.verification-badge { display: grid; gap: 4px; min-width: 170px; padding: 15px 18px; background: var(--forest); color: var(--surface); }
+.verification-badge small { font: 500 .66rem var(--mono); letter-spacing: .1em; }
+.verification-badge strong { font: 650 1.1rem var(--serif); }
+[data-theme="dark"] .verification-badge { color: #17231e; }
+.archive-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
+.archive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.archive-card { min-height: 210px; padding: 24px; background: var(--surface); border: 1px solid var(--line); }
+.archive-card h2 { margin-top: 20px; font-size: 1.55rem; }
+.archive-card p { color: var(--ink-soft); }
+.archive-meta, .chapter-chip { color: var(--gold) !important; font-family: var(--mono); font-size: .75rem; text-transform: uppercase; }
+.chapter-chip { display: inline-block; padding: 4px 7px; border: 1px solid var(--gold-soft); }
+.reference-table { border-top: 1px solid var(--line-strong); }
+.reference-row { display: grid; grid-template-columns: minmax(180px,.7fr) 110px 2fr; gap: 22px; padding: 20px 4px; border-bottom: 1px solid var(--line); }
+.reference-row strong { font-family: var(--serif); font-size: 1.15rem; }
+.reference-row span { color: var(--gold); font-family: var(--mono); font-size: .8rem; }
+.reference-row p { margin: 0; color: var(--ink-soft); }
+.sources-intro { max-width: 740px; padding: 24px 0; }
+.source-list { display: grid; gap: 8px; }
+.source-list a { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 22px; align-items: center; padding: 20px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; }
+.source-list a:hover { border-color: var(--gold); }
+.source-list span { color: var(--ink-soft); font-size: .86rem; }
+.source-list b { color: var(--gold); }
+.empty-state { padding: 40px; text-align: center; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+
+@media (max-width: 1000px) {
+  .desktop-nav a { padding: 0 10px; font-size: .78rem; }
+  .chapter-map { grid-template-columns: repeat(3, 1fr); }
+  .archive-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .chapter-map, .ledger-grid, .archive-grid, .recipe-grid { grid-template-columns: 1fr; }
+  .map-stop { min-height: 88px; }
+  .reference-row { grid-template-columns: 1fr; gap: 7px; }
+  .source-list a { grid-template-columns: 1fr auto; }
+  .source-list span { grid-column: 1 / -1; }
+  .verification-badge { min-width: 0; width: 100%; }
+  .ledger-card { grid-template-columns: 44px 1fr; padding: 17px; }
+  .ledger-count { width: 42px; height: 42px; }
+  .mobile-nav { grid-template-columns: repeat(5, 1fr); }
+}
+
 .header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; }
 .locale-switch, .icon-button {
   min-height: 40px;
